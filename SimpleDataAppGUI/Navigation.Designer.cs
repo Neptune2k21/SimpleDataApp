@@ -43,6 +43,7 @@ namespace SimpleDataAppGUI
             this.btnGoToAdd.TabIndex = 0;
             this.btnGoToAdd.Text = "Ajouter un compte";
             this.btnGoToAdd.UseVisualStyleBackColor = true;
+            this.btnGoToAdd.Click += new System.EventHandler(this.btnGoToAdd_Click);
             // 
             // btnGoToFillOrCancel
             // 
@@ -52,6 +53,7 @@ namespace SimpleDataAppGUI
             this.btnGoToFillOrCancel.TabIndex = 1;
             this.btnGoToFillOrCancel.Text = "Remplir ou annuler une commande";
             this.btnGoToFillOrCancel.UseVisualStyleBackColor = true;
+            this.btnGoToFillOrCancel.Click += new System.EventHandler(this.btnGoToFillOrCancel_Click);
             // 
             // btnExit
             // 
@@ -61,6 +63,7 @@ namespace SimpleDataAppGUI
             this.btnExit.TabIndex = 2;
             this.btnExit.Text = "Quitter";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // Navigation
             // 
@@ -73,6 +76,7 @@ namespace SimpleDataAppGUI
             this.Name = "Navigation";
             this.Text = "Navigation";
             this.ResumeLayout(false);
+
         }
 
         #endregion

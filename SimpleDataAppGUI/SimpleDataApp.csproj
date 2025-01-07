@@ -69,6 +69,9 @@
     <EmbeddedResource Include="FillOrCancel.resx">
       <DependentUpon>FillOrCancel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Navigation.resx">
+      <DependentUpon>Navigation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewCustomer.resx">
       <DependentUpon>NewCustomer.cs</DependentUpon>
     </EmbeddedResource>

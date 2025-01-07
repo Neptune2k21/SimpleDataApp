@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace SimpleDataAppGUI
 {
@@ -8,6 +10,8 @@ namespace SimpleDataAppGUI
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private int parsedCustomerID;
+        private int orderId;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -20,6 +24,35 @@ namespace SimpleDataAppGUI
                 components.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        private bool IsCustomerNameValide()
+        {
+            if (txtCustomerName.Text == "")
+            {
+                MessageBox.Show("Please enter a Name ");
+                return false;
+            }
+            return true;
+        }
+
+        private bool isOrderDataValid()
+        {
+            if (numOrderAmount.Value <= 0)
+            {
+                MessageBox.Show("Please specify an order amount");
+                return false;
+            }
+            return true;
+        }
+
+        private void ClearForm()
+        {
+            txtCustomerName.Text = "";
+            txtCustomerID.Text = "";
+            numOrderAmount.Value = 0;
+            dtpOrderDate.Value = DateTime.Now;
+            this.parsedCustomerID = 0;
         }
 
         #region Windows Form Designer generated code
