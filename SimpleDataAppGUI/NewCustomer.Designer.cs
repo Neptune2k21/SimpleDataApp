@@ -119,6 +119,7 @@ namespace SimpleDataAppGUI
             this.btnCreateAccount.TabIndex = 4;
             this.btnCreateAccount.Text = "Créer un compte";
             this.btnCreateAccount.UseVisualStyleBackColor = true;
+            this.btnCreateAccount.Click += new System.EventHandler(this.btnCreateAccount_Click);
             // 
             // label3
             // 
@@ -172,6 +173,7 @@ namespace SimpleDataAppGUI
             this.btnAddFinish.TabIndex = 10;
             this.btnAddFinish.Text = "Terminer";
             this.btnAddFinish.UseVisualStyleBackColor = true;
+            this.btnAddFinish.Click += new System.EventHandler(this.btnAddFinish_Click);
             // 
             // btnAddAnotherAccount
             // 
@@ -181,6 +183,7 @@ namespace SimpleDataAppGUI
             this.btnAddAnotherAccount.TabIndex = 11;
             this.btnAddAnotherAccount.Text = "Ajouter un autre compte";
             this.btnAddAnotherAccount.UseVisualStyleBackColor = true;
+            this.btnAddAnotherAccount.Click += new System.EventHandler(this.btnAddAnotherAccount_Click);
             // 
             // NewCustomer
             // 

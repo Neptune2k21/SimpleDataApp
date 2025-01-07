@@ -27,7 +27,7 @@ namespace SimpleDataAppGUI.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\mssqllocaldb;Initial Catalog=Sales;Integrated Security=True" +
-            ";Pooling=False;Encrypt=True;Trust Server Certificate=False")]
+            ";Pooling=False")]
         public string connString {
             get {
                 return ((string)(this["connString"]));

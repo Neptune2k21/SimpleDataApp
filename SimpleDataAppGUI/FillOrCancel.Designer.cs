@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Data.SqlClient;
+using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace SimpleDataAppGUI
 {
@@ -8,6 +11,7 @@ namespace SimpleDataAppGUI
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private int parsedOrderID;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -20,6 +24,31 @@ namespace SimpleDataAppGUI
                 components.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        private bool IsOrderIDValid()
+        {
+            // Check for input in the Order ID text box.
+            if (txtOrderID.Text == "")
+            {
+                MessageBox.Show("Please specify the Order ID.");
+                return false;
+            }
+
+            // Check for characters other than integers.
+            else if (Regex.IsMatch(txtOrderID.Text, @"^\D*$"))
+            {
+                // Show message and clear input.
+                MessageBox.Show("Customer ID must contain only numbers.");
+                txtOrderID.Clear();
+                return false;
+            }
+            else
+            {
+                // Convert the text in the text box to an integer to send to the database.
+                parsedOrderID = Int32.Parse(txtOrderID.Text);
+                return true;
+            }
         }
 
         #region Windows Form Designer generated code
@@ -66,6 +95,7 @@ namespace SimpleDataAppGUI
             this.btnFindByOrderID.TabIndex = 2;
             this.btnFindByOrderID.Text = "Rechercher une commande";
             this.btnFindByOrderID.UseVisualStyleBackColor = true;
+            this.btnFindByOrderID.Click += new System.EventHandler(this.btnFindByOrderID_Click);
             // 
             // dtpFillDate
             // 
@@ -115,6 +145,7 @@ namespace SimpleDataAppGUI
             this.btnFillOrder.TabIndex = 7;
             this.btnFillOrder.Text = "Honorer une commande";
             this.btnFillOrder.UseVisualStyleBackColor = true;
+            this.btnFillOrder.Click += new System.EventHandler(this.btnFillOrder_Click);
             // 
             // btnFinishUpdates
             // 
